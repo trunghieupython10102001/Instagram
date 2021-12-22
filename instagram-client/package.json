@@ -1,5 +1,5 @@
 {
-  "proxy": "http://localhost:1010",
+  "proxy": "https://pacific-refuge-69121.herokuapp.com",
   "name": "instagram",
   "version": "0.1.0",
   "private": true,
