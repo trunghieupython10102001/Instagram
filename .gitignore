@@ -1,5 +1,4 @@
-instagram/node_modules
+instagram-client/node_modules
 instagram-server/node_modules
 .vscode
-instagram/src/config/constant.js
 instagram-server/.env
