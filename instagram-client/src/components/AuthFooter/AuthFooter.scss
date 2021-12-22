@@ -1,0 +1,68 @@
+.AuthFooter {
+	display: flex;
+	flex-direction: column;
+	padding: 0px 16px;
+	background-color: #fafafa;
+	&-container {
+		margin-bottom: 52px;
+		.AuthFooter-functions {
+			display: flex;
+			flex-direction: column;
+			margin-top: 24px;
+			flex: 0 0 auto;
+			justify-content: flex-start;
+			.functions-list {
+				flex-wrap: wrap;
+				display: flex;
+				flex: 0 0 auto;
+				justify-content: center;
+				&-item {
+					margin: 0 8px 12px 8px;
+					display: flex;
+					flex: 0 0 auto;
+					justify-content: flex-start;
+					a {
+						color: #8a8a8a;
+						text-decoration: none;
+						font-size: 1.2rem;
+						line-height: 1.6rem;
+						margin: -2px 0 -3px;
+						display: block;
+					}
+				}
+			}
+		}
+		.AuthFooter-author {
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			margin: 12px 0;
+			flex: 0 0 auto;
+			.language {
+				display: flex;
+				align-items: center;
+				.text {
+					color: #8a8a8a;
+					font-size: 1.2rem;
+					line-height: 1.6rem;
+					margin: -2px 0 -3px;
+				}
+				.icon {
+					transform: rotate(180deg);
+					margin-left: 4px;
+				}
+			}
+			.copyrights {
+				margin-left: 16px;
+				display: flex;
+				align-items: center;
+				span {
+					color: #8a8a8a;
+					font-size: 1.2rem;
+					line-height: 1.6rem;
+					margin: -2px 0 -3px;
+				}
+			}
+		}
+	}
+}

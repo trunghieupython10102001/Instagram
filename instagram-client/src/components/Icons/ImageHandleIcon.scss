@@ -1,0 +1,42 @@
+.ImageHandleIcon {
+	position: absolute;
+	top: 50%;
+	transform: translateY(-50%);
+	display: flex;
+	justify-content: center;
+	cursor: pointer;
+	align-items: center;
+	&-container {
+		margin: 8px;
+		background: rgba(26, 26, 26, 0.8);
+		border-radius: 50%;
+		box-shadow: 0 4px 12px rgb(0 0 0 / 15%);
+		cursor: pointer;
+		opacity: 1;
+		position: relative;
+		transition-duration: 0.2s;
+		transition-property: opacity;
+		z-index: 3;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		.ImageHandleIcon-btn {
+			border: none;
+			cursor: pointer;
+			background: none;
+			position: relative;
+			padding: 8px;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+		}
+	}
+}
+
+.ImageHandleIcon.next {
+	right: 0;
+}
+
+.ImageHandleIcon.back {
+	left: 0;
+}

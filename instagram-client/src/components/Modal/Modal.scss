@@ -1,0 +1,17 @@
+.Modal {
+	justify-content: space-around;
+	align-items: center;
+	display: flex;
+	flex-direction: column;
+	position: fixed;
+	top: 0;
+	left: 0;
+	bottom: 0;
+	right: 0;
+	z-index: 100;
+	overflow-y: auto;
+}
+
+.Modal.hidden {
+	display: none;
+}

@@ -1,0 +1,27 @@
+.GetApp {
+	display: flex;
+	flex-direction: column;
+	&-text {
+		color: var(--text-color);
+		font-size: 1.4rem;
+		line-height: 1.8rem;
+		margin: 10px 20px 10px 20px;
+		text-align: center;
+	}
+	&-btn {
+		display: flex;
+		justify-content: center;
+		margin: 10px 0;
+		&-link {
+			text-decoration: none;
+			margin-right: 8px;
+			img {
+				height: 40px;
+				object-fit: cover;
+			}
+		}
+		&-link:last-child {
+			margin: 0;
+		}
+	}
+}

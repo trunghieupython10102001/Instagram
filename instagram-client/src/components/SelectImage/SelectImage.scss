@@ -1,0 +1,44 @@
+.SelectImage {
+	flex: 1 1 auto;
+	height: calc(100vmin - 219px);
+	max-height: min(calc(100vw - 372px),855px);
+    max-width: min(calc(100vw - 372px),855px);
+    min-height: 348px;
+    min-width: 348px;
+	display: flex;
+	&-container {
+		opacity: 1;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+		height: 100%;
+		width: 100%;
+	}
+	&-dropzone {
+		padding: 24px;
+		display: flex;
+		flex-direction: column;
+		flex: 0 0 auto;
+		justify-content: center;
+		align-items: center;
+		// height: 100%;
+		// width: 100%;
+		.description {
+			margin-top: 16px;
+			display: flex;
+			flex: 0 0 auto;
+			&-text {
+				text-align: center;
+				color: var(--text-color);
+				font-weight: 300;
+				font-size: 2.2rem;
+				line-height: 2.6rem;
+				margin: -4px 0 -5px;
+			}
+		}
+		.PrimaryBtn {
+			margin-top: 24px;
+		}
+	}
+}

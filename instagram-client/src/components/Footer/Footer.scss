@@ -1,0 +1,39 @@
+.Footer {
+	width: 100%;
+	padding-bottom: 38px;
+	.container {
+		display: flex;
+		margin-bottom: 16px;
+		.functions {
+			// display: flex;
+			// flex-wrap: wrap;
+			list-style: none;
+			margin-bottom: 3px;
+			max-width: 100%;
+			.item {
+				display: inline-block;
+				.item-link {
+					font-size: 1.1rem;
+					color: #c7c7c7;
+					line-height: 1.3rem;
+					text-align: left;
+					text-decoration: none;
+					&::after {
+						content: "\00B7";
+						margin: 0 0.25em 0 0.25em;
+					}
+					
+				}
+				.lang::after {
+					content: "";
+				}
+			}
+		}
+	}
+	.copyright {
+		color: #c7c7c7;
+		font-size: 1.1rem;
+		line-height: 1.3rem;
+		text-transform: uppercase;
+	}
+}

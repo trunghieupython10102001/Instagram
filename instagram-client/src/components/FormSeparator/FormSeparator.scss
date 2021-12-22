@@ -1,0 +1,24 @@
+.FormSeparator {
+	display: flex;	
+	margin: 10px 40px 18px;
+	.line {
+		flex-grow: 1;
+		flex-shrink: 1;
+		background-color: var(--border);
+		height: 1px;
+		position: relative;
+		top: .45rem;
+	}
+	.or {
+		display: flex;
+		color: #8e8e8e;
+
+		flex-grow: 0;
+		flex-shrink: 0;
+		font-size: 1.3rem;
+		font-weight: 600;
+		line-height: 1.5rem;
+		margin: 0px 18px;
+		text-transform: uppercase;
+	}
+}

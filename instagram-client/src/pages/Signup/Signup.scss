@@ -1,0 +1,12 @@
+.Signup {
+	display: flex;
+	flex-direction: column;
+	.container {
+		display: flex;
+		margin: 0 auto;
+		margin-bottom: 44px;
+		flex: 1 1 auto;
+		justify-content: center;
+		min-height: 100%;
+	}
+}

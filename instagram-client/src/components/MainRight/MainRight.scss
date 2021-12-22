@@ -1,0 +1,83 @@
+.MainRight {
+	display: flex;
+	flex-direction: column;
+	max-width: 293px;
+	width: 100%;
+	align-items: center;
+	.user-switch {
+		display: flex;
+		align-items: center;
+		margin-bottom: 10px;
+		margin-top: 18px;
+		width: 100%;
+		.avatar {
+			width: 56px;
+			height: 56px;
+			border-radius: 50%;
+			margin-right: 8px;
+			img {
+				width: 100%;
+				height: 100%;
+				object-fit: cover;
+				border-radius: 50%;
+			}
+		}
+		.name {
+			margin-left: 12px;
+			flex: 1;
+			a {
+				text-decoration: none;
+			}
+			.insta-name a {
+				font-size: 1.4rem;
+				color: var(--text-color);
+				font-weight: 600;
+			}
+			.fb-name span {
+				font-size: 1.4rem;
+				margin-top: 8px;
+				color: #8e8e8e;
+			}
+		}
+		.switch {
+			margin-left: 8px;
+			button {
+				border: none;
+				color: #0095f6;
+				font-weight: 600;
+				font-size: 1.2rem;
+				line-height: 1.6rem;
+				background: none;
+				cursor: pointer;
+			}
+		}
+	}
+	.suggestions {
+		width: 100%;
+		.text {
+			display: flex;
+			justify-content: space-between;
+			font-size: 1.4rem;
+			color: #8e8e8e;
+			margin-top: 12px;
+			span {
+				font-size: inherit;
+				font-weight: 600;
+				line-height: 1.8rem;
+			}
+			button {
+				color: var(--text-color);
+				font-size: 1.2rem;
+				font-weight: 600;
+				background: none;
+				border: none;
+				cursor: pointer;
+			}
+		}
+		.people {
+			padding-top: 8px;
+			padding-bottom: 8px;
+			margin-bottom: 20px;
+		}
+	}
+}
