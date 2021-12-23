@@ -26,6 +26,19 @@
 				}
 			}
 
+			.head-left-text {
+				display: flex;
+				flex-direction: column;
+				margin-left: 14px;
+				&__location {
+					padding: 2px 0;
+					color: var(--text-color);
+					font-size: 1.2rem;
+					line-height: 1.5rem;
+					cursor: pointer;
+				}
+			}
+
 			a {
 				text-decoration: none;
 				flex: 1;
@@ -35,7 +48,6 @@
 				font-size: 1.4rem;
 				color: var(--text-color);
 				font-weight: 600;
-				margin-left: 14px;
 				text-decoration: none;
 				&:hover {
 					text-decoration: underline;

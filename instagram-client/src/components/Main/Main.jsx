@@ -75,10 +75,11 @@ export const Main = () => {
 							{posts.map((post) => (
 								<Post
 									key={uuidv4()}
-									username={post.authorName}
-									content={post.content}
-									location={post.location}
-									images={post.images}
+									post={post}
+									// username={post.authorName}
+									// content={post.content}
+									// location={post.location}
+									// images={post.images}
 								/>
 							))}
 						</InfiniteScroll>

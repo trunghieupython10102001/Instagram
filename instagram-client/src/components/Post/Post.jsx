@@ -11,11 +11,21 @@ import { CaretLeft } from "../Icons/CaretLeft"
 import { CaretRight } from "../Icons/CaretRight"
 import { useEffect, useRef, useState } from "react"
 import Imagepreview from "../ImagePreview/ImagePreview"
+import handleDate from "../../utils/handleDate"
 
-const Post = ({ images, avatar, username, content, location }) => {
+const Post = ({
+	post: {
+		images,
+		avatar,
+		authorName,
+		content,
+		location,
+		createdAt,
+		comments,
+	},
+}) => {
 	const contentRef = useRef()
 	const [currentImage, setCurrentImage] = useState(0)
-
 	const [contentHidden, setContentHidden] = useState(() => {
 		if (content) {
 			return content.split("").length >= 120
@@ -72,9 +82,14 @@ const Post = ({ images, avatar, username, content, location }) => {
 								/>
 							</a>
 						</div>
-						<a href="/">
-							<span className="name">{username}</span>
-						</a>
+						<div className="head-left-text">
+							<a href="/">
+								<span className="name">{authorName}</span>
+							</a>
+							<span className="head-left-text__location">
+								{location}
+							</span>
+						</div>
 					</div>
 					<div className="button">
 						<Dots />
@@ -117,7 +132,7 @@ const Post = ({ images, avatar, username, content, location }) => {
 					<div className="content">
 						<p className="text">
 							<a href="/">
-								<span className="name">{username}</span>
+								<span className="name">{authorName}</span>
 							</a>{" "}
 							<span ref={contentRef} className="main-content">
 								{content}
@@ -135,13 +150,15 @@ const Post = ({ images, avatar, username, content, location }) => {
 							)}
 						</p>
 						<div className="view-comment">
-							<span>
-								View all <span>10</span> comments
-							</span>
+							{comments.length > 0 && (
+								<span>
+									View all <span>10</span> comments
+								</span>
+							)}
 						</div>
 					</div>
 					<div className="time">
-						<span>1 day ago</span>
+						<span>{handleDate(createdAt)}</span>
 					</div>
 					<section className="add-cmt">
 						<div className="container">
