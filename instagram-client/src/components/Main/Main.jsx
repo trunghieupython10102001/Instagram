@@ -7,6 +7,7 @@ import setAuthToken from "../../utils/setAuthToken"
 import Mainright from "../MainRight/MainRight"
 import Post from "../Post/Post"
 import "./Main.scss"
+import Loadingpost from "../LoadingPost/LoadingPost"
 
 export const Main = () => {
 	const limit = 3
@@ -69,7 +70,7 @@ export const Main = () => {
 							dataLength={posts.length}
 							next={() => getMorePost(limit, skip)}
 							hasMore={true}
-							loader={<h4>Loading ...</h4>}
+							loader={<Loadingpost />}
 							endMessage={<h4>Ended</h4>}
 						>
 							{posts.map((post) => (
