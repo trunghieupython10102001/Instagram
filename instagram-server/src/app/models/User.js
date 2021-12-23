@@ -22,10 +22,12 @@ const User = new Schema(
 		],
 		avatar: { type: String },
 		birthday: { type: String },
-		posts: [{
-			type: mongoose.Schema.Types.ObjectId,
-			ref: "posts"
-		}],
+		posts: [
+			{
+				type: mongoose.Schema.Types.ObjectId,
+				ref: "posts",
+			},
+		],
 	},
 	{
 		timestamps: true,
