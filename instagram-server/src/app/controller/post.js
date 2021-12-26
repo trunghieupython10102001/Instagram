@@ -153,13 +153,15 @@ async function unlikePost(req, res, next) {
 
 		const post = await Post.findOneAndUpdate(
 			{ _id: req.params.id },
-			{ $pull: { likes: req.uerId } }
+			{ $pull: { likes: req.userId} }
 		)
 
 		if (post) {
 			res.status(200).json({
 				success: true,
 				message: "Unlike ok",
+				post,
+				id: req.userId
 			})
 		} else {
 			res.status(400).json({
@@ -188,7 +190,7 @@ async function deletePostById(req, res, next) {
 		if (post) {
 			res.json({
 				success: true,
-				message: 'Post deleted'
+				message: "Post deleted",
 			})
 		} else {
 			res.json({

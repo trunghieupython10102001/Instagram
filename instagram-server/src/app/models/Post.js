@@ -16,12 +16,7 @@ const Post = new Schema(
 		},
 		images: { type: Array },
 		comments: { type: Array, default: [] },
-		likes: [
-			{
-				type: mongoose.Schema.Types.ObjectId,
-				ref: "users",
-			},
-		],
+		likes: { type: Array },
 	},
 	{
 		timestamps: true,
