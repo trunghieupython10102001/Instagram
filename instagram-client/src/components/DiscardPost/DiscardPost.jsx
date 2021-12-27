@@ -1,7 +1,13 @@
 import Modal from "../Modal/Modal"
 import "./DiscardPost.scss"
 
-const Discardpost = ({ handleDiscard, handleCancel }) => {
+const Discardpost = ({
+	handleDiscard,
+	handleCancel,
+	title,
+	description,
+	discardText,
+}) => {
 	return (
 		<Modal opacity={0.65}>
 			<div className="DiscardPost">
@@ -9,10 +15,10 @@ const Discardpost = ({ handleDiscard, handleCancel }) => {
 					<div className="DiscardPost-wrapper">
 						<div className="DiscardPost-content">
 							<h3 className="DiscardPost-content__title">
-								Discard post?
+								{title}
 							</h3>
 							<div className="DiscardPost-content__description">
-								If you leave, your edits won't be saved.
+								{description}
 							</div>
 						</div>
 						<div className="DiscardPost-btns">
@@ -20,7 +26,7 @@ const Discardpost = ({ handleDiscard, handleCancel }) => {
 								onClick={handleDiscard}
 								className="DiscardPost-button discard-btn"
 							>
-								Discard
+								{discardText}
 							</button>
 							<button
 								onClick={handleCancel}

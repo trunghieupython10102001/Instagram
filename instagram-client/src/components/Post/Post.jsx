@@ -10,7 +10,7 @@ import { BigPlane } from "../Icons/BigPlane"
 import { Smile } from "../Icons/Smile"
 import { CaretLeft } from "../Icons/CaretLeft"
 import { CaretRight } from "../Icons/CaretRight"
-import { useContext, useEffect, useRef, useState } from "react"
+import { useContext, useEffect, useRef, useState, memo } from "react"
 import Imagepreview from "../ImagePreview/ImagePreview"
 import handleDate from "../../utils/handleDate"
 import LikePostHeart from "../LikePostHeart/LikePostHeart"
@@ -18,6 +18,8 @@ import { AuthContext } from "../../contexts/AuthContext"
 import axios from "axios"
 import setAuthToken from "../../utils/setAuthToken"
 import { apiUrl } from "../../contexts/constants"
+import PostBoard from "../PostBoard/PostBoard"
+import Discardpost from "../DiscardPost/DiscardPost"
 
 const Post = ({
 	post: {
@@ -25,6 +27,7 @@ const Post = ({
 		images,
 		avatar,
 		authorName,
+		author,
 		content,
 		location,
 		createdAt,
@@ -45,6 +48,7 @@ const Post = ({
 		return ""
 	})
 	const [disabled, setDisabled] = useState(true)
+	const [isBoardOn, setIsBoardOn] = useState(false)
 	const [isImageClicked, setIsImageClicked] = useState(false)
 
 	const handleImageClick = () => {
@@ -57,8 +61,15 @@ const Post = ({
 		}
 	}
 
+	const handleBoardClick = () => {
+		setIsBoardOn(!isBoardOn)
+	}
+
+	// hanlde like and unlike post
 	const handleHeartClick = () => {
-		setAuthToken(localStorage.getItem("accessToken"))
+		if (localStorage.getItem("accessToken")) {
+			setAuthToken(localStorage.getItem("accessToken"))
+		}
 		setIsPostLiked(!isPostLiked)
 		if (isPostLiked) {
 			axios.patch(`${apiUrl}/post/unlike/${_id}`)
@@ -69,6 +80,7 @@ const Post = ({
 		}
 	}
 
+	// remove heart after 1.5s when click on image
 	useEffect(() => {
 		let imageTimer
 		if (isImageClicked) {
@@ -77,13 +89,16 @@ const Post = ({
 		return () => clearTimeout(imageTimer)
 	}, [isImageClicked])
 
+	// handle if post have multiple image
 	const handleNextImage = () => {
 		setCurrentImage((prev) => prev + 1)
 	}
+
 	const handleBackImage = () => {
 		setCurrentImage((prev) => prev - 1)
 	}
 
+	// handle comment
 	const handleCommentChange = (e) => {
 		if (e.target.value.length > 0) {
 			setDisabled(false)
@@ -92,10 +107,12 @@ const Post = ({
 		}
 	}
 
+	// toggle truncate content
 	const handleHiddenContentClick = () => {
 		setContentHidden(!contentHidden)
 	}
 
+	// truncate content if content length > 120
 	useEffect(() => {
 		let newContent = content
 		newContent = newContent
@@ -114,6 +131,9 @@ const Post = ({
 
 	return (
 		<div className="Post">
+			{isBoardOn && (
+				<PostBoard postId={_id} onBoardClick={handleBoardClick} authorId={author} />
+			)}
 			<div className="Post-container">
 				<div className="Post__head">
 					<div className="Post__head-left">
@@ -134,7 +154,7 @@ const Post = ({
 							</span>
 						</div>
 					</div>
-					<div className="button">
+					<div onClick={handleBoardClick} className="button">
 						<Dots />
 					</div>
 				</div>
@@ -233,4 +253,4 @@ const Post = ({
 	)
 }
 
-export default Post
+export default memo(Post)

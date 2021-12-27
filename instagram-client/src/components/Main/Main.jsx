@@ -1,7 +1,6 @@
 import { useEffect, useState } from "react"
 import axios from "axios"
 import InfiniteScroll from "react-infinite-scroll-component"
-import { v4 as uuidv4 } from "uuid"
 import { apiUrl } from "../../contexts/constants"
 import setAuthToken from "../../utils/setAuthToken"
 import Mainright from "../MainRight/MainRight"
@@ -24,10 +23,6 @@ export const Main = () => {
 			}
 		})
 	})
-
-	// useEffect(() => {
-	// 	getMorePost(limit, skip)
-	// }, [])
 
 	async function getMorePost(limit, skip) {
 		if (localStorage.getItem("accessToken")) {
@@ -73,9 +68,9 @@ export const Main = () => {
 							loader={<Loadingpost />}
 							endMessage={<h4>Ended</h4>}
 						>
-							{posts.map((post) => (
+							{posts.map((post, index) => (
 								<Post
-									key={uuidv4()}
+									key={index}
 									post={post}
 									// username={post.authorName}
 									// content={post.content}

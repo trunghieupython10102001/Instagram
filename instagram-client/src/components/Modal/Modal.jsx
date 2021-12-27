@@ -2,6 +2,7 @@ import clsx from "clsx"
 import CloseBtn from "../CloseBtn/CloseBtn"
 import "./Modal.scss"
 export default function Modal({ opacity, children, close, handleClose }) {
+
 	return (
 		<div
 			onClick={handleClose}

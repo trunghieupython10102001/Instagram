@@ -221,6 +221,9 @@ const Createpost = () => {
 					<Discardpost
 						handleCancel={handleCancel}
 						handleDiscard={handleDiscard}
+						title={"Discard post?"}
+						description={"If you leave, your edits won't be saved."}
+						discardText={"Discard"}
 					/>
 				)}
 
